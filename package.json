@@ -1,0 +1,23 @@
+{
+  "name": "surveyapp",
+  "version": "1.0.0",
+  "description": "React-Redux-Express-MongoDB-ReduxForm-Email-Stripe-App",
+  "main": "server/index.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "start": "node index.js --exec babel-node --presets es2015,stage-2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhant/surveyApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhant/surveyApp/issues"
+  },
+  "homepage": "https://github.com/akhant/surveyApp#readme"
+}
