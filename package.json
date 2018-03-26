@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/akhant/surveyApp/issues"
   },
-  "homepage": "https://github.com/akhant/surveyApp#readme"
+  "homepage": "https://github.com/akhant/surveyApp#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
