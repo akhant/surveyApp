@@ -1,14 +1,33 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const keys = require("./config/keys");
+const app = express();
 
-app.get("/", (req,res)=> {
-    res.send("world")
-})
 
-const PORT = process.env.PORT || 5000
-app.listen(PORT, ()=> {
-    console.log("running")
-})
+
+//mongodb
+const mongoose = require("mongoose");
+
+mongoose.connect(keys.mongoURI);
+
+//midelwares
+import passport from 'passport'
+import cookieSession from 'cookie-session'
+
+app.use(cookieSession({
+  maxAge: 30*24*60*1000,
+  keys: [keys.cookieKey]
+}))
+require("./services/passport");
+
+app.use(passport.initialize())
+app.use(passport.session())
+require("./routes/authRoutes")(app);
+
+//server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("running");
+});
 
 //for heroku deploy:
 //1.Dinamic Port

@@ -8,7 +8,8 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js --exec babel-node --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,14 @@
   },
   "homepage": "https://github.com/akhant/surveyApp#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11",
+    "nodemon": "^1.17.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
