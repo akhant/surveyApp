@@ -10,8 +10,8 @@ const mongoose = require("mongoose");
 mongoose.connect(keys.mongoURI);
 
 //midelwares
-import passport from 'passport'
-import cookieSession from 'cookie-session'
+const passport = require("passport")
+const cookieSession = require('cookie-session') 
 
 app.use(cookieSession({
   maxAge: 30*24*60*1000,
