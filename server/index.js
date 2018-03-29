@@ -26,7 +26,8 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
-if (process.env.NODE_ENV === "production") {
+console.log(process.env.NODE_ENV)
+if (process.env.NODE_ENV === "undefined") {
   app.use(express.static("client/build"));
 
   const path = require("path");
@@ -40,6 +41,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("running");
 });
+
 
 //for heroku deploy:
 //1.Dinamic Port
